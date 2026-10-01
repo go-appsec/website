@@ -1,10 +1,8 @@
 ---
-import { Image } from 'astro:assets';
 import { LinkButton } from '@astrojs/starlight/components';
 
 const { data } = Astro.locals.starlightRoute.entry;
 const { title = data.title, tagline, actions = [], image } = data.hero || {};
-const artwork = image && 'file' in image ? image.file : undefined;
 ---
 
 <div class="hero">
@@ -19,14 +17,5 @@ const artwork = image && 'file' in image ? image.file : undefined;
       ))}
     </div>
   </div>
-  {artwork && (
-    <Image
-      src={artwork}
-      alt={image?.alt || ''}
-      width={artwork.width}
-      height={artwork.height}
-      loading="eager"
-      decoding="async"
-    />
-  )}
+  {image && 'html' in image && <Fragment set:html={image.html} />}
 </div>

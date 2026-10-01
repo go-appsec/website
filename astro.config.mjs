@@ -10,12 +10,11 @@ export default defineConfig({
   integrations: [sitemap(), starlight({
     title: 'Toolbox',
     description: 'Application security testing with humans and coding agents. Set up Sectool, inspect traffic, and test requests together.',
-    logo: { src: './src/assets/logo.png', replacesTitle: false },
     favicon: '/favicon.png',
     social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/go-appsec/toolbox' }],
     editLink: { baseUrl: 'https://github.com/go-appsec/website/edit/main/' },
     plugins: [galaxy()],
-    components: { Hero: './src/components/Hero.astro' },
+    components: { Hero: './src/components/Hero.astro', SiteTitle: './src/components/SiteTitle.astro' },
     customCss: ['./src/styles/custom.css'],
     sidebar: [
       { label: 'Overview', link: '/' },
