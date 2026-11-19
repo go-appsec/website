@@ -26,6 +26,10 @@ Local development and preview use the root path, for example `http://localhost:4
 
 ## Content accuracy
 
-Pages summarize the main README, contributor guidance, SDK contract, and source at the checked-out revision. The installed CLI help and advertised MCP schemas are the detailed references for a running version.
+Pages summarize the Toolbox README, contributor guidance, SDK contract, and source. The installed CLI help and advertised MCP schemas are the detailed references for a running version.
+
+Documentation baseline: [go-appsec/toolbox at `5847d17ade4680b1b388d5087304f64321a1d45f`](https://github.com/go-appsec/toolbox/commit/5847d17ade4680b1b388d5087304f64321a1d45f).
+
+To refresh the docs, compare that baseline with a chosen new Toolbox commit. Review changes to commands, flags, defaults, MCP tools, and the sidecar contract against `src/content/docs/`, then update affected pages. Run `pnpm check` and `pnpm build`, and advance the baseline to the reviewed commit in the same change. Record the full Toolbox SHA here, not the website commit or a moving branch name.
 
 The [go-appsec GitHub avatar](https://avatars.githubusercontent.com/u/251776565) is bundled unchanged for the header logo, favicon, and right-hand homepage image. GitHub serves it at 460×460 pixels. Dark surfaces use `#151b23`, highlights use `#df6009`, and light-theme accents use `#0a3253`.

@@ -46,6 +46,8 @@ sectool mcp --proxy-port 8080 --workflow explore --notes
 
 `notes_save` and `notes_list` let an agent save observations and findings linked to flows. They are disabled by default and marked experimental by the CLI. A note's `finding` type is a label, not independent confirmation of a vulnerability.
 
+Humans can list, inspect, and delete saved notes with [`sectool notes`](../cli/#review-saved-notes) while the server is running with `--notes`.
+
 ## Transports
 
 MCP binds to `127.0.0.1` and exposes `/mcp` for Streamable HTTP and `/sse` for legacy SSE. Browser traffic uses the separate proxy port. See [agent connection](../../getting-started/agents/).

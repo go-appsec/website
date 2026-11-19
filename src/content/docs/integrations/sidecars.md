@@ -25,4 +25,6 @@ sectool mcp --proxy-port 8080 --workflow explore --notes
 
 Then install and launch sidenuclei following [its own documentation](https://github.com/go-appsec/toolbox-sidenuclei). It runs alongside Sectool rather than being bundled into the Sectool executable.
 
+Review saved findings with `sectool notes list --type finding`, then use `sectool notes get NOTE_ID` for the full content of a returned note. See [review saved notes](../../reference/cli/#review-saved-notes) for filters and deletion.
+
 Captured parameters, cookies, and authentication context can make scans more relevant to the requests you actually exercised. Coverage depends on captured traffic, scanner configuration, and templates. Review scanner results before reporting them as confirmed vulnerabilities.
