@@ -14,7 +14,7 @@
   "dependencies": {
     "@astrojs/sitemap": "3.7.6",
     "@astrojs/starlight": "0.43.1",
-    "astro": "7.3.5",
+    "astro": "7.4.13",
     "sharp": "0.35.5",
     "starlight-theme-galaxy": "1.0.0"
   },
