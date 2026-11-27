@@ -3,19 +3,21 @@ name: Publish website
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   build:
     name: Build website
-    if: github.repository == 'go-appsec/website' && github.ref == 'refs/heads/main'
+    if: github.repository == 'go-appsec/website'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -32,12 +34,14 @@ jobs:
       - run: pnpm check
       - run: pnpm build
       - uses: actions/upload-pages-artifact@v5.0.0
+        if: github.ref == 'refs/heads/main'
         with:
           path: dist
 
   deploy:
     name: Deploy to GitHub Pages
     needs: build
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       pages: write
